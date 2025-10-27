@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>💌 Fun Get-to-Know Quiz 💌</title>
+  <style>
+    :root {
+      --accent: #ff4f81;
+      --bg: #fff0f5;
+      --card: #ffffff;
+      --muted: #555;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 32px;
+      color: #222;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      font-size: 2rem;
+    }
+    p.intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .question {
+      margin-bottom: 28px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    label.option {
+      background: #ffe4ec;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    label.option:hover {
+      background: #ffd6e8;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    input[type="radio"]:checked + label {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    button {
+      display: block;
+      margin: 24px auto 0;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e11d74;
+    }
+    #results {
+      display: none;
+      margin-top: 24px;
+      padding: 20px;
+      background: #ffeaf3;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💌 Fun Get-to-Know Quiz 💌</h1>
+    <p class="intro">Answer these 10 fun questions to see what we know about each other!</p>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. What’s your favorite time of the day?</h3>
+        <div class="options">
+          <input type="radio" id="q1a1" name="q1" value="Morning"><label class="option" for="q1a1">☀️ Morning</label>
+          <input type="radio" id="q1a2" name="q1" value="Afternoon"><label class="option" for="q1a2">🌤️ Afternoon</label>
+          <input type="radio" id="q1a3" name="q1" value="Evening"><label class="option" for="q1a3">🌆 Evening</label>
+          <input type="radio" id="q1a4" name="q1" value="Night"><label class="option" for="q1a4">🌙 Night</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>2. How do you like to relax?</h3>
+        <div class="options">
+          <input type="radio" id="q2a1" name="q2" value="Reading"><label class="option" for="q2a1">📖 Reading</label>
+          <input type="radio" id="q2a2" name="q2" value="Music"><label class="option" for="q2a2">🎧 Music</label>
+          <input type="radio" id="q2a3" name="q2" value="TV"><label class="option" for="q2a3">📺 Watching Shows</label>
+          <input type="radio" id="q2a4" name="q2" value="Outdoors"><label class="option" for="q2a4">🌳 Outdoors</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>3. Favorite type of food?</h3>
+        <div class="options">
+          <input type="radio" id="q3a1" name="q3" value="Pizza"><label class="option" for="q3a1">🍕 Pizza</label>
+          <input type="radio" id="q3a2" name="q3" value="Sweets"><label class="option" for="q3a2">🍫 Sweets</label>
+          <input type="radio" id="q3a3" name="q3" value="FastFood"><label class="option" for="q3a3">🍔 Fast Food</label>
+          <input type="radio" id="q3a4" name="q3" value="Healthy"><label class="option" for="q3a4">🥗 Healthy</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>4. Favorite hobby?</h3>
+        <div class="options">
+          <input type="radio" id="q4a1" name="q4" value="Sports"><label class="option" for="q4a1">⚽ Sports</label>
+          <input type="radio" id="q4a2" name="q4" value="Gaming"><label class="option" for="q4a2">🎮 Gaming</label>
+          <input type="radio" id="q4a3" name="q4" value="Art"><label class="option" for="q4a3">🎨 Art</label>
+          <input type="radio" id="q4a4" name="q4" value="Music"><label class="option" for="q4a4">🎵 Music</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>5. Favorite way to travel?</h3>
+        <div class="options">
+          <input type="radio" id="q5a1" name="q5" value="RoadTrip"><label class="option" for="q5a1">🚗 Road Trip</label>
+          <input type="radio" id="q5a2" name="q5" value="Beach"><label class="option" for="q5a2">🏖️ Beach</label>
+          <input type="radio" id="q5a3" name="q5" value="Mountains"><label class="option" for="q5a3">⛰️ Mountains</label>
+          <input type="radio" id="q5a4" name="q5" value="City"><label class="option" for="q5a4">🌆 City Trip</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>6. Favorite drink?</h3>
+        <div class="options">
+          <input type="radio" id="q6a1" name="q6" value="Coffee"><label class="option" for="q6a1">☕ Coffee</label>
+          <input type="radio" id="q6a2" name="q6" value="Tea"><label class="option" for="q6a2">🍵 Tea</label>
+          <input type="radio" id="q6a3" name="q6" value="Juice"><label class="option" for="q6a3">🧃 Juice</label>
+          <input type="radio" id="q6a4" name="q6" value="Soda"><label class="option" for="q6a4">🥤 Soda</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>7. Favorite season?</h3>
+        <div class="options">
+          <input type="radio" id="q7a1" name="q7" value="Spring"><label class="option" for="q7a1">🌸 Spring</label>
+          <input type="radio" id="q7a2" name="q7" value="Summer"><label class="option" for="q7a2">☀️ Summer</label>
+          <input type="radio" id="q7a3" name="q7" value="Autumn"><label class="option" for="q7a3">🍂 Autumn</label>
+          <input type="radio" id="q7a4" name="q7" value="Winter"><label class="option" for="q7a4">❄️ Winter</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>8. Favorite type of movie?</h3>
+        <div class="options">
+          <input type="radio" id="q8a1" name="q8" value="Comedy"><label class="option" for="q8a1">😂 Comedy</label>
+          <input type="radio" id="q8a2" name="q8" value="Romantic"><label class="option" for="q8a2">💖 Romantic</label>
+          <input type="radio" id="q8a3" name="q8" value="Action"><label class="option" for="q8a3">💥 Action</label>
+          <input type="radio" id="q8a4" name="q8" value="Horror"><label class="option" for="q8a4">👻 Horror</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>9. How do you usually spend weekends?</h3>
+        <div class="options">
+          <input type="radio" id="q9a1" name="q9" value="Friends"><label class="option" for="q9a1">👫 Hanging with Friends</label>
+          <input type="radio" id="q9a2" name="q9" value="Relax"><label class="option" for="q9a2">😴 Relaxing at Home</label>
+          <input type="radio" id="q9a3" name="q9" value="Adventure"><label class="option" for="q9a3">🎢 Adventures</label>
+          <input type="radio" id="q9a4" name="q9" value="Hobby"><label class="option" for="q9a4">🎨 Hobbies</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>10. What’s your favorite music genre?</h3>
+        <div class="options">
+          <input type="radio" id="q10a1" name="q10" value="Pop"><label class="option" for="q10a1">🎤 Pop</label>
+          <input type="radio" id="q10a2" name="q10" value="Rock"><label class="option" for="q10a2">🎸 Rock</label>
+          <input type="radio" id="q10a3" name="q10" value="Classical"><label class="option" for="q10a3">🎻 Classical</label>
+          <input type="radio" id="q10a4" name="q10" value="EDM"><label class="option" for="q10a4">🎧 EDM</label>
+        </div>
+      </div>
+
+      <button type="button" onclick="submitQuiz()">Submit ✅</button>
+    </form>
+
+    <div id="results"></div>
+  </div>
+<script>
+function submitQuiz() {
+  const form = document.getElementById('quizForm');
+  const data = new FormData(form);
+  let answers = {};
+  let unanswered = [];
+
+  for (let i = 1; i <= 10; i++) {
+    const q = data.get('q' + i);
+    if (!q) unanswered.push(i);
+    answers['Q' + i] = q || 'Not answered';
+  }
+
+  const results = document.getElementById('results');
+  if (unanswered.length > 0) {
+    results.style.display = 'block';
+    results.innerHTML = `⚠️ Please answer all questions before submitting!`;
+    return;
+  }
+
+  // show results + share button
+  results.style.display = 'block';
+  results.innerHTML = `
+    <h3>🎉 Fun Quiz Results!</h3>
+    <p>Here are your answers:</p>
+    <pre style="text-align:left;background:#fff;padding:10px;border-radius:8px">${JSON.stringify(answers, null, 2)}</pre>
+    <p>💌 Share with friends</p>
+    <button id="shareBtn" style="margin-top:10px;padding:10px 20px;background:#ff4f81;color:#fff;border:none;border-radius:8px;cursor:pointer;">Share Now 🚀</button>
+  `;
+
+  // When "Share Now" button is clicked
+  document.getElementById('shareBtn').addEventListener('click', function() {
+    // open the next page (index.html)
+    window.location.href = "index.html";
+  });
+}
+</script>
